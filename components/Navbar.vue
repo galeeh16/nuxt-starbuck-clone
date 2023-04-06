@@ -21,7 +21,11 @@
         <div class="flex items-center gap-4">
           <div class="sm:flex sm:gap-4">
             <nuxt-link to="find-a-store"
-              class="block cursor-pointer text-sm font-medium text-gray-800 transition hover:text-[#007042]">
+              class="flex items-center gap-1 cursor-pointer text-sm font-medium text-gray-800 transition hover:text-[#007042]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-geo-alt-fill text-[#2a8a15]" viewBox="0 0 16 16">
+                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+              </svg>
               Find A Store
             </nuxt-link>
           </div>

@@ -11,3 +11,18 @@ body {
     color: #3d3935;
     font-size: 0.96rem;
 }
+
+.bg-image {
+    background-color: #efefef;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+::selection {
+    color: white;
+    background-color: #007042;
+}
