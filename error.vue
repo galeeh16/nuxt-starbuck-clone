@@ -2,7 +2,16 @@
   <Navbar />
 
   <div :class="style.container" class="mt-12">
-    <h1 class="text-[1.7rem] font-semibold">We're sorry — something has gone wrong on our end. There is no such page.</h1>
+    <template v-if="props.error.statusCode == 404">
+      <h1 class="text-[1.7rem] font-semibold">We're sorry — something has gone wrong on our end. There is no such page.
+      </h1>
+    </template>
+    <template v-else-if="props.error.statusCode == 403">
+      <h1 class="text-[1.7rem] font-semibold">We're sorry — You don't have permission to access this page.</h1>
+    </template>
+    <template v-else>
+      <h1 class="text-[1.7rem] font-semibold">{{ props.error.message }}</h1>
+    </template>
 
     <img src="https://www.starbucks.co.id/image/coffee-stain_tcm33-9901_w1024_n.png" alt="Not Found">
 
@@ -29,6 +38,9 @@
 import style from './style'
 const props = defineProps(['error'])
 
+useHead({
+  title: `${props.error.statusCode} | Starbucks Coffee Company`
+})
 </script>
 
 <style scoped>
